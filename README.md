@@ -78,9 +78,9 @@ Before training the model, the dataset is augmented and divided to dataloades.
 - ComplexCNNModel: The model is a CNN with three convolutional layers, followed by max-pooling, dropout, and fully connected layers for binary classification. The output layer uses a sigmoid activation to produce a probability score between 0 and 1.
 - Pre-Trained Models: ResNet50, VGG16 and ViT
 ### 3. Training, Validation, and Testing
-Each model (ComplexCNNModel, ResNet, VGG, ViT) is trained using the training dataset, followed by validation on the validation dataset to assess its performance. After training and validation, the model is tested on a separate test dataset to evaluate its accuracy and performance. The training and validation losses are tracked throughout the process.
+Each model (ComplexCNNModel, ResNet, VGG, ViT) is trained using the training dataset, followed by validation on the validation dataset to assess its performance. After training and validation, the model is tested on a separate test dataset to evaluate its accuracy and performance.
 ### 4. Evaluation
-The final results are presented with the confusion matrix and accuracy score of each model.
+The final results are presented with the confusion matrix, training and validation losses graph and accuracy score of each model.
 ### 5. Fine-Tuning the ResNet Model
 The ResNet model is fine-tuned by experimenting with different batch sizes (16, 32, 64) and learning rates (0.001, 0.0001, 0.01). The model is trained for 3 epochs with the AdamW optimizer and a learning rate scheduler. After each epoch, training and validation losses, as well as accuracy, are tracked. The model is then evaluated on a test set, and the best configuration (based on test accuracy) is saved along with the model's details for further analysis.
 
@@ -104,7 +104,7 @@ Fine-Tuning ResNet Model achieved in each experiment the following test accuraci
 | Experiment | Batch Size | Learning Rate | Test Accuracy |
 |------------|------------|---------------|---------------|
 | 1          | 16         | 0.0010        | 0.870192      |
-**| 2          | 16         | 0.0001        | 0.942308      |**
+| **2**      | **16**     | **0.0001**    | **0.942308**  |
 | 3          | 16         | 0.0100        | 0.461538      |
 | 4          | 32         | 0.0010        | 0.863782      |
 | 5          | 32         | 0.0001        | 0.879808      |
@@ -115,3 +115,8 @@ Fine-Tuning ResNet Model achieved in each experiment the following test accuraci
 
 Experiment 2 with a batch size of 16 and a learning rate of 0.0001 yielded the best result, achieving a test accuracy of 0.942308. This configuration demonstrated the optimal balance between training performance and model generalization, resulting in the highest test accuracy compared to other combinations of batch sizes and learning rates in the experiment.
 
+**Summary**
+In this project, I aimed to solve an important image classification task by leveraging four powerful models: CNN, ResNet, VGG, and ViT (Vision Transformer). These models were selected based on their proven effectiveness in computer vision tasks. Each model was carefully trained, evaluated, and compared to assess their performance in the given task.
+To ensure that the most accurate model was chosen, the performance of all four models was measured across key metrics, including test accuracy, loss, and validation performance. After evaluating the models, I performed fine-tuning on the best-performing models to enhance their accuracy further. Fine-tuning involved adjusting hyperparameters, such as batch size and learning rate, as well as utilizing data augmentation techniques to improve model generalization and robustness.
+Fine-Tuning ResNet Model achieved the best performance(94% Test Accuracy), demonstrating the effectiveness of fine-tuning for optimizing the model.
+Through this process, I successfully utilized multiple state-of-the-art models to address a challenging image classification problem, comparing their strengths and weaknesses.
