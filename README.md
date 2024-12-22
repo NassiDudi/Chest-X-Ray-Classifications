@@ -11,6 +11,7 @@ This project focuses on classifying chest X-ray images to detect pneumonia using
 6. [Code Breakdown](#code-breakdown)  
 7. [Visualization](#visualization)  
 8. [Results](#results)
+9. [Summary](#summary)
 
 ## Project Overview
 This project aims to classify chest X-ray images to detect pneumonia by leveraging deep learning techniques. Four different models were implemented and compared to evaluate their performance in this medical image classification task.
@@ -78,7 +79,7 @@ Before training the model, the dataset is augmented and divided to dataloades.
 - ComplexCNNModel: The model is a CNN with three convolutional layers, followed by max-pooling, dropout, and fully connected layers for binary classification. The output layer uses a sigmoid activation to produce a probability score between 0 and 1.
 - Pre-Trained Models: ResNet50, VGG16 and ViT
 ### 3. Training, Validation, and Testing
-Each model (ComplexCNNModel, ResNet, VGG, ViT) is trained using the training dataset, followed by validation on the validation dataset to assess its performance. After training and validation, the model is tested on a separate test dataset to evaluate its accuracy and performance.
+Each model (ComplexCNN, ResNet, VGG, ViT) is trained using the training dataset, followed by validation on the validation dataset to assess its performance. After training and validation, the model is tested on a separate test dataset to evaluate its accuracy and performance.
 ### 4. Evaluation
 The final results are presented with the confusion matrix, training and validation losses graph and accuracy score of each model.
 ### 5. Fine-Tuning the ResNet Model
@@ -115,7 +116,7 @@ Fine-Tuning ResNet Model achieved in each experiment the following test accuraci
 
 Experiment 2 with a batch size of 16 and a learning rate of 0.0001 yielded the best result, achieving a test accuracy of 0.942308. This configuration demonstrated the optimal balance between training performance and model generalization, resulting in the highest test accuracy compared to other combinations of batch sizes and learning rates in the experiment.
 
-**Summary**
+## Summary
 In this project, I aimed to solve an important image classification task by leveraging four powerful models: CNN, ResNet, VGG, and ViT (Vision Transformer). These models were selected based on their proven effectiveness in computer vision tasks. Each model was carefully trained, evaluated, and compared to assess their performance in the given task.
 To ensure that the most accurate model was chosen, the performance of all four models was measured across key metrics, including test accuracy, loss, and validation performance. After evaluating the models, I performed fine-tuning on the best-performing models to enhance their accuracy further. Fine-tuning involved adjusting hyperparameters, such as batch size and learning rate, as well as utilizing data augmentation techniques to improve model generalization and robustness.
 Fine-Tuning ResNet Model achieved the best performance(94% Test Accuracy), demonstrating the effectiveness of fine-tuning for optimizing the model.
